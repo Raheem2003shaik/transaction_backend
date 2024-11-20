@@ -1,13 +1,14 @@
 const express = require('express');
 const Transaction = require('./db');
 const app = express();
+const cors = require('cors');
 
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send("<h1>Hey..... S. Jahnavi</h1>");
+    res.send("CORS-enabled for all origins!");
 });
 
 // POST /api/transactions/ route
